@@ -116,5 +116,5 @@ STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-# Herokuの設定
+# Herokuの設定用
 django_heroku.settings(locals())
