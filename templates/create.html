@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block header %}
+    <p class="lead">新規登録のページです</p>
+{% endblock header%}
+
+
+{% block content %}
+
+<div class="container">
+<!-- トップへ戻る -->
+<p>
+<a href="{% url 'top' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">トップへ戻る</a>
+</p>
+
+<div class="form-group">
+<form action="" method="POST">
+
+    {% csrf_token %}
+    {{ form|crispy }}
+
+    <button type="submit" class="btn btn-primary">作成する</button>
+
+</form>
+</div>
+</div>
+
+{% endblock content%}

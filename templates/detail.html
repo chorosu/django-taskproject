@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+<p class="lead">タスク詳細のページです</p>
+{% endblock header%}
+
+{% block content %}
+<div class="container">
+
+<!-- トップへ戻る -->
+<p>
+    <a href="{% url 'top' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">トップへ戻る</a>
+</p>
+
+<table class="table table-bordered">
+    <tr>
+        <td>タスク名</td>
+        <td>{{ object.title }}</td>
+    </tr>
+    <tr>
+        <td>メモ</td>
+        <td>{{ object.memo }}</td>
+    </tr>
+    <tr>
+        <td>優先度</td>
+        <td>{{ object.get_priority_display }}</td>
+    </tr>
+    <tr>
+        <td>期限</td>
+        <td>{{ object.duedate }}</td>
+    </tr>
+    <tr>
+        <td>作成日</td>
+        <td>{{ object.created_at }}</td>
+    </tr>
+    <tr>
+        <td>更新日</td>
+        <td>{{ object.updated_at }}</td>
+    </tr>
+</table>
+
+
+</div>
+{% endblock content %}
